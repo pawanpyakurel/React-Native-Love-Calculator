@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     LovePercentageEnterValue:{
         fontSize : 20,
         textAlign: "center",
-        color: "blue"
+        color: "#8d04ba"
     },
     Rodel:{
         marginTop: 50,

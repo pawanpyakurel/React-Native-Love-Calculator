@@ -44,6 +44,13 @@ class Home extends Component {
             Keyboard.dismiss()
        }
         const calculate = () =>{
+            NetInfo.addEventListener(state => {
+                if(state.isConnected){
+                    this.setState({
+                        conectionStatus: true
+                    })
+                }
+            });
             this.setState({
                 result: "Loading"
             })
@@ -80,7 +87,7 @@ class Home extends Component {
                 {
                     this.state.conectionStatus ?  
                     <View>
-                        <DisplayLove  result ={this.state.result} />
+                        <DisplayLove  result ={this.state.result} isConnected = {this.state.conectionStatus}/>
                     </View>
                     :
                     <Text style = {styles.notConnectedToInternet}> Not Connected to Internet  </Text>

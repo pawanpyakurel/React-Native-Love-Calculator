@@ -1,8 +1,8 @@
 import React from 'react';
 
 //style 
-import { StyleSheet, Text, View } from 'react-native';
-import { Appbar } from 'react-native-paper';
+import { StyleSheet, View, Text} from 'react-native';
+import { Appbar, Button} from 'react-native-paper';
 
 //component
 import Home from "./Components/home/home"
@@ -20,6 +20,9 @@ export default function App() {
         />
       </Appbar.Header>
       <Home />
+      <View style={styles.footer}> 
+        <Button style={styles.footerText} mode="contained"> Powered by: Pawan Pyakurel</Button>
+      </View>
     </View>
   );
 }
@@ -29,4 +32,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff'
   },
+  footer:{
+    backgroundColor :"#0352fc",
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    left: 0,
+  },
+  footerText:{
+    textAlign: "right",
+    alignContent: "flex-end",
+    backgroundColor : "#4f25a8",
+
+  }
 });

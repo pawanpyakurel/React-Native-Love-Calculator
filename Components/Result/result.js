@@ -7,14 +7,10 @@ import { styles } from "./result.styles"
 import { ActivityIndicator, Colors } from 'react-native-paper';
 
 const DisplayLove=(prop ) =>{
-    console.log(prop)
+    console.log(prop, prop.isConnected)
     return(
         <View style = {styles.LoveResultWrapper}>
-            {
-                 !prop.result ==="initial" && (
-                    <Text style = {styles.LovePercentageEnterValue}> Connect To the internet  </Text>
-                )
-            }
+            
             {
                 prop.result ==="initial" && (
                     <Text style = {styles.LovePercentageEnterValue}> Enter Value  </Text>
@@ -33,6 +29,11 @@ const DisplayLove=(prop ) =>{
                     </View>
                 )
 
+            }
+            {
+                !prop.isConnected &&(
+                    <Text style = {styles.LovePercentageEnterValue}> Connect To the internet  </Text>
+                )
             }
 
         </View>
